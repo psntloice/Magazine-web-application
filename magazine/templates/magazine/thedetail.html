@@ -1,0 +1,8 @@
+{% extends 'magazine/base.html' %}
+{% block content %}
+    <h2>{{ post.the_text }}</h2>
+    <p>{{ post.body }}</p>
+
+    <p><a href = "{% url 'editer' post.pk %}"> Edit post</a></p>
+    <p><a href = "{% url 'on_delete' post.pk %}"> Delete post</a></p>
+{% endblock content %}

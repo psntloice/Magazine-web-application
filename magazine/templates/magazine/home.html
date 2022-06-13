@@ -7,19 +7,28 @@
         
 
         
-        <h1 align="center" style="background-color:gray">Magazine home</h1>        
+        <h1 align="center" style="background-color:gray">My-Magazine</h1>        
         <hr>
      </head>
     <body style="background-color:Violet"> 
-        <h4 align="center">Hello!</h4>
-        <h3 align="center">Happy to be here? I am happy.</h3><br/>
-        Feel free to dig in whats below
-        <ul align="center">
+        <h4 align="left">Hello!</h4>
+        <h3 align="center">Happy to be here? I am happy😃.</h3><br/>
+        Topics we'd love to cover
+        <ul>
             <li>Lifestyle</li>
             <li>Art</li>
             <li>Business</li>
             <li>Career</li>
             <li>News</li>
+        </ul>
+        <h2>Post board</h2>
+        <p> We love to listen! Share with us!☺  </p>
+        <p><a href="{% url 'addnew' %}">Create new</a> </p>
+        <ul>
+            {% for post in object_list %} 
+                <a href="{% url 'getdetail' post.pk %}">{{ post.the_text }}</a>
+                <p>{{ post.body }}</p>
+            {% endfor %}
         </ul>
     </body>
 
